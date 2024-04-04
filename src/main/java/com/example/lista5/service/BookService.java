@@ -38,7 +38,7 @@ public class BookService implements IBookService {
     @CacheEvict(value = "books", allEntries = true)
     public BookDTO addBook(BookDTO book){
         book.setId(null);
-        Author author = authorRepository.findById(book.getAuthorId()).orElseThrow(
+        Author author = authorRepository.findById(book.getAuthor().getId()).orElseThrow(
                 () -> new EntityNotFoundException("Autor nie jest wpisany do systemu")
         );
         Book repBook = new Book(book.getId(),book.getTitle(),book.getPages(), book.getRented(), author);
@@ -55,7 +55,7 @@ public class BookService implements IBookService {
                 () -> new EntityNotFoundException("Nie ma takiej ksiazki w systemie")
         );
         repBook.setTitle(book.getTitle());
-        repBook.setAuthor(authorRepository.findById(book.getAuthorId()).orElseThrow(
+        repBook.setAuthor(authorRepository.findById(book.getAuthor().getId()).orElseThrow(
                 () -> new EntityNotFoundException("Autor nie jest wpisany do systemu")
         ));
         repBook.setPages(book.getPages());

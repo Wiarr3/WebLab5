@@ -25,6 +25,6 @@ public class Book {
     private Author author;
 
     public BookDTO toDto(){
-        return new BookDTO(id,title,pages,rented,author.getId());
+        return new BookDTO(id,title,pages,rented,author.toDto());
     }
 }

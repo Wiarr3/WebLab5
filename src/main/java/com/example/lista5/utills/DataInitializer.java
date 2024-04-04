@@ -32,7 +32,7 @@ public class DataInitializer {
             for (int i = 0; i < FIRST_NAMES.length; i++) {
                 Author author = new Author();
                 author.setFirstName(FIRST_NAMES[i]);
-                author.setSecondName(LAST_NAMES[i % LAST_NAMES.length]);
+                author.setLastName(LAST_NAMES[i % LAST_NAMES.length]);
                 author.setCountry("Polska");
                 author.setBirthYear("19" + (50 + i));
                 authors.add(author);
@@ -43,7 +43,7 @@ public class DataInitializer {
                 Book book = new Book();
                 book.setTitle(BOOK_TITLES[i % BOOK_TITLES.length] + " Tom " + ((i / BOOK_TITLES.length) + 1));
                 book.setPages(rand.nextInt(100) + 100);
-                book.setRentFlag(rand.nextBoolean());
+                book.setRented("false");
                 book.setAuthor(authors.get(rand.nextInt(authors.size())));
                 bookRepository.save(book);
             }
