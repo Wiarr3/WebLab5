@@ -43,7 +43,8 @@ public class DataInitializer {
                 Book book = new Book();
                 book.setTitle(BOOK_TITLES[i % BOOK_TITLES.length] + " Tom " + ((i / BOOK_TITLES.length) + 1));
                 book.setPages(rand.nextInt(100) + 100);
-                book.setRented("false");
+                long phoneNumber = rand.nextLong(100_000_000L, 1_000_000_000L);
+                book.setRented(String.format("+48 %09d", phoneNumber));
                 book.setAuthor(authors.get(rand.nextInt(authors.size())));
                 bookRepository.save(book);
             }

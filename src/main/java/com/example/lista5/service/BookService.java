@@ -59,6 +59,7 @@ public class BookService implements IBookService {
                 () -> new EntityNotFoundException("Autor nie jest wpisany do systemu")
         ));
         repBook.setPages(book.getPages());
+        repBook.setRented(book.getRented());
         bookRepository.save(repBook);
         return repBook.toDto();
     }
