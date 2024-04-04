@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.web.bind.annotation.RequestMethod.*;
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
+
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(origins = "http://localhost", methods = {GET, POST, PUT, DELETE})
 public class BookController {
     private final BookService bookService;
 
