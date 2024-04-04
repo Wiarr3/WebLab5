@@ -13,6 +13,6 @@ public class BookDTO {
     private Long id;
     private String title;
     private Integer pages;
-    private boolean rentFlag;
+    private String rented;
     private Long authorId;
 }

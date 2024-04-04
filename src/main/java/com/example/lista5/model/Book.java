@@ -18,13 +18,13 @@ public class Book {
     private Long id;
     private String title;
     private Integer pages;
-    private boolean rentFlag;
+    private String rented;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
 
     public BookDTO toDto(){
-        return new BookDTO(id,title,pages,rentFlag,author.getId());
+        return new BookDTO(id,title,pages,rented,author.getId());
     }
 }

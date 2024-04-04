@@ -48,7 +48,7 @@ public class AuthorService implements IAuthorService {
                 () -> new EntityNotFoundException("Nie ma takiego autora w systemie")
         );
         repAuthor.setFirstName(author.getFirstName());
-        repAuthor.setSecondName(author.getSecondName());
+        repAuthor.setLastName(author.getLastName());
         repAuthor.setCountry(author.getCountry());
         repAuthor.setBirthYear(author.getBirthYear());
         authorRepository.save(repAuthor);

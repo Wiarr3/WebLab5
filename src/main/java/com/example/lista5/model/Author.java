@@ -17,7 +17,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
-    private String secondName;
+    private String lastName;
     private String country;
     private String birthYear;
 
@@ -26,6 +26,6 @@ public class Author {
 
 
     public AuthorDTO toDto(){
-        return new AuthorDTO(id,firstName,secondName,country,birthYear);
+        return new AuthorDTO(id,firstName,lastName,country,birthYear);
     }
 }
